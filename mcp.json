@@ -1,0 +1,76 @@
+{
+  "name": "etoro-mcp-server",
+  "version": "1.0.0",
+  "description": "eToro portfolio tools for Claude",
+  "server": {
+    "command": "npm run start",
+    "transport": "stdio"
+  },
+  "tools": [
+    {
+      "name": "fetch_etoro_portfolio",
+      "description": "Fetch an eToro user's portfolio using their username",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "username": {
+            "type": "string",
+            "description": "The eToro username"
+          },
+          "authToken": {
+            "type": "string",
+            "description": "Optional: Authorization token for authenticated requests"
+          }
+        },
+        "required": ["username"]
+      }
+    },
+    {
+      "name": "fetch_instrument_details",
+      "description": "Fetch details for a list of eToro instruments",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "instrumentIds": {
+            "type": "array",
+            "items": {
+              "type": "number"
+            },
+            "description": "List of instrument IDs to fetch details for"
+          },
+          "fields": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Fields to include in the response",
+            "default": ["displayname", "threeMonthPriceChange", "oneYearPriceChange", "lastYearPriceChange"]
+          }
+        },
+        "required": ["instrumentIds"]
+      }
+    },
+    {
+      "name": "search_instruments",
+      "description": "Search for eToro instruments by name prefix (autocomplete)",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "namePrefix": {
+            "type": "string",
+            "description": "The prefix to search for in instrument names"
+          },
+          "fields": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Fields to include in the response",
+            "default": ["internalInstrumentId", "displayname", "internalClosingPrice"]
+          }
+        },
+        "required": ["namePrefix"]
+      }
+    }
+  ]
+} 
