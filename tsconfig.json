@@ -10,7 +10,8 @@
     "declaration": false,
     "skipLibCheck": true,
     "allowSyntheticDefaultImports": true,
-    "resolveJsonModule": true
+    "resolveJsonModule": true,
+    "allowJs": true
   },
   "include": ["src/**/*"],
   "exclude": ["node_modules", "dist"]
