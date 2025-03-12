@@ -3,11 +3,9 @@
 	"version": "1.0.0",
 	"type": "module",
 	"scripts": {
-		"build": "tsc --skipLibCheck",
+		"build": "tsc",
 		"start": "node dist/index.js",
-		"dev": "ts-node-dev --respawn src/index.ts",
-		"direct": "node run-direct.js",
-		"fix-imports": "node fix-imports.js"
+		"dev": "ts-node-dev --respawn src/index.ts"
 	},
 	"dependencies": {
 		"@modelcontextprotocol/sdk": "latest",
