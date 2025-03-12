@@ -1,6 +1,7 @@
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { z } from "zod";
-import { handleResponse, DEFAULT_BASE_URL, DEFAULT_ACCESS_TOKEN } from "../index.js";
+import { handleResponse } from "../utils/response.js";
+import { BASE_URL as DEFAULT_BASE_URL, DEFAULT_ACCESS_TOKEN } from "../config/constants.js";
 
 // Common parameter schemas
 const teamParams = {
