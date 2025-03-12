@@ -61,11 +61,3 @@ jobs:
           package: .
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_663B9800D3E244A3A0065BBA0AE94DEE }}
           
-      - name: Configure startup command
-        uses: azure/appservice-settings@v1
-        with:
-          app-name: 'etoroMCP'
-          slot-name: 'Production'
-          mask-inputs: true
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_663B9800D3E244A3A0065BBA0AE94DEE }}
-        id: settings
